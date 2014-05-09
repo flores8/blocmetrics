@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  web_property_id: 1
+  type: 
+  ip_address: MyString
+
+two:
+  web_property_id: 1
+  type: 
+  ip_address: MyString
