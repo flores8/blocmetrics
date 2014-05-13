@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_filter :set_headers
+  skip_before_action :verify_authenticity_token
 
   # GET /events
   # GET /events.json
@@ -24,9 +26,9 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    #binding pry
+    #binding.pry
     @event = Event.new(event_params)
-
+    @event.ip_address = request.env["REMOTE_HOST"]
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -63,6 +65,27 @@ class EventsController < ApplicationController
   end
 
   private
+
+    def set_headers
+      headers['Access-Control-Allow-Origin'] = '*'
+      headers['Access-Control-Expose-Headers'] = 'ETag'
+      headers['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS, HEAD'
+      headers['Access-Control-Allow-Headers'] = '*,x-requested-with,Content-Type,If-Modified-Since,If-None-Match'
+      headers['Access-Control-Max-Age'] = '1728000'
+    end
+
+    def permission_denied_error
+      error(403, 'Permission Denied!')
+    end
+
+    def error(status, message = 'Something went wrong')
+      response = {
+        response_type: "ERROR", 
+        message: message
+      }
+      render json: response.to_json, status: status
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
@@ -70,6 +93,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:web_property_id, :type, :ip_address)
+      params.require(:event).permit(:web_property_id, :type, :ip_address, :location)
     end
 end
