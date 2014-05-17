@@ -63,7 +63,7 @@ $(document).ready(function(){
 Then you need to tag each link you want to track like this: 
 
 ```
-<%= link_to "Link Name", link_path, class: "trackable", "data-track" => "sign-up-home" %>
+<%= link_to "Link Name", link_path, class: "trackable", "data-track" => "whatever-you-want-to-identify-link" %>
 ```
 
 That's all.
