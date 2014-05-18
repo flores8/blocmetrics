@@ -6,7 +6,7 @@ var sendTrackableEvent = function(web_property_id, type){
 	}
 
 	var _bm_request = $.ajax({
-	  url: "http://localhost:4000/events",
+	  url: "http://lauralee-blocmetrics.herokuapp.com/events",
 	  method: "post",
 	  data: {event: _bm_event}
 	})
