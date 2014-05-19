@@ -21,14 +21,14 @@ $(document).ready(function() {
 
 	// Line graph
 	var data = {
-		labels : JSON.parse($("#value-label").html()),
+		labels : JSON.parse($('#value-label').html()),
 		datasets : [
 			{
 				fillColor : "rgba(151,187,205,0.5)",
 				strokeColor : "rgba(151,187,205,1)",
 				pointColor : "rgba(151,187,205,1)",
 				pointStrokeColor : "#fff",
-				data : JSON.parse($("#value-data").html())
+				data : JSON.parse($('#value-data').html())
 			}
 		]
 	}
@@ -40,12 +40,12 @@ $(document).ready(function() {
 
 	//Bar Graph
 	var data = {
-	labels : JSON.parse($("#count-date").html()),
+	labels : JSON.parse($('#count-date').html()),
 	datasets : [
 		{
 			fillColor : "rgba(151,187,205,0.5)",
 			strokeColor : "rgba(151,187,205,1)",
-			data : JSON.parse($("#count").html())
+			data : JSON.parse($('#count').html())
 		}
 	]}
 	new Chart(ctx).Bar(data);
