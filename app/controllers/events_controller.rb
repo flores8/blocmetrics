@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+    #binding.pry
     @events = Event.all
     @events_type = @events.where(type: "click")
   end
