@@ -6,7 +6,7 @@
 
 <h1>Click Locations</h1>
 <% @events_type.each do |e| %>
-  <p><%= e.location %></p>
+  <p><%= e.location %> on <%= e.created_at.strftime("%b %d, %Y") %></p>
 <% end %>
 <h1>All Events</h1>
 <table>

@@ -21,14 +21,14 @@ $(document).ready(function() {
 
 	// Line graph
 	var data = {
-		labels : JSON.parse($('#value-label').html()),
+		labels : $('#value-label').html(),
 		datasets : [
 			{
 				fillColor : "rgba(151,187,205,0.5)",
 				strokeColor : "rgba(151,187,205,1)",
 				pointColor : "rgba(151,187,205,1)",
 				pointStrokeColor : "#fff",
-				data : JSON.parse($('#value-data').html())
+				data : $('#value-data').html()
 			}
 		]
 	}
