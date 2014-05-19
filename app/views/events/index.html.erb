@@ -49,7 +49,7 @@
   <%= @events.where(type: "click").count(group: "DATE(created_at)").values %>
 </div>
 <div id="count-date" class="hidden">
-  <%= @events.where(type: "click").count(group: "DATE(created_at)").keys %>
+  <%= @events.where(type: "click").count(group: "DATE(created_at)").keys.to_json %>
 </div>
 
   
