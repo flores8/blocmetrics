@@ -42,6 +42,8 @@
 </div>
 <div id="value-label" class="hidden">
   <%= @events.count(group: "DATE(created_at)").keys.to_json %>
+
+  $.ajax("/blocmetrics/myurl")
 </div>
 
 <!-- Data for bar graph showing all clicks by day --> 
@@ -49,7 +51,7 @@
   <%= @events.where(type: "click").count(group: "DATE(created_at)").values %>
 </div>
 <div id="count-date" class="hidden">
-  <%= @events.where(type: "click").count(group: "DATE(created_at)").keys.to_json %>
+  <%= @events.where(type: "click").count(group: "DATE(created_at)").keys.to_ %>
 </div>
 
   
