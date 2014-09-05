@@ -14,22 +14,23 @@ var sendTrackableEvent = function(web_property_id, type){
 }
 
 
-$(document).ready(function() { 
-	var ctx = $("#myChart").get(0).getContext("2d");
+
+
+
+
+$(document).ready(function() {
+	var ctx = $("#myBarChart").get(0).getContext("2d");
 	var myNewChart = new Chart(ctx);
 
-	// Line graph
+	//Bar Graph
 	var data = {
-		labels : JSON.parse({$("#value-label").html()),
-		datasets : [
-			{
-				fillColor : "rgba(151,187,205,0.5)",
-				strokeColor : "rgba(151,187,205,1)",
-				pointColor : "rgba(151,187,205,1)",
-				pointStrokeColor : "#fff",
-				data : JSON.parse($("#value-data").html())
-			}
-		]
-	}
-	new Chart(ctx).Line(data);
- });
+	labels : JSON.parse($("#count-date").html()),
+	datasets : [
+		{
+			fillColor : "rgba(151,187,205,0.5)",
+			strokeColor : "rgba(151,187,205,1)",
+			data : JSON.parse($("#count").html())
+		}
+	]}
+	new Chart(ctx).Bar(data);
+})
