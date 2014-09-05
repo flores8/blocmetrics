@@ -4,7 +4,7 @@
 
 		<header class="cd-header">
 			<div id="cd-logo"><%= link_to "Get Started", get_started_path %></div>
-			<a class="cd-menu-trigger" href="#main-nav">View Events<span></span></a>
+			<%= link_to raw("View Events <span></span>"), events_path, class: "cd-menu-trigger" %>
 		</header>
 		<div class="cd-blurred-bg"></div>
 	</section> <!-- cd-intro -->
