@@ -1,3 +1,4 @@
+
 var sendTrackableEvent = function(web_property_id, type){
 	var _bm_event = {
 	  web_property_id: web_property_id,
@@ -13,13 +14,14 @@ var sendTrackableEvent = function(web_property_id, type){
 	// _bm_request.send(JSON.stringify(_bm_event));
 }
 
+
 $(document).ready(function() { 
 	var ctx = $("#myChart").get(0).getContext("2d");
 	var myNewChart = new Chart(ctx);
 
 	// Line graph
 	var data = {
-		labels : JSON.parse($("#value-label").html()),
+		labels : JSON.parse({$("#value-label").html()}),
 		datasets : [
 			{
 				fillColor : "rgba(151,187,205,0.5)",
@@ -32,7 +34,6 @@ $(document).ready(function() {
 	}
 	new Chart(ctx).Line(data);
  });
-
 $(document).ready(function() {
 	var ctx = $("#myBarChart").get(0).getContext("2d");
 	var myNewChart = new Chart(ctx);
@@ -48,4 +49,4 @@ $(document).ready(function() {
 		}
 	]}
 	new Chart(ctx).Bar(data);
-});
+})

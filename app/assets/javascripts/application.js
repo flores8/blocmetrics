@@ -17,4 +17,4 @@
 //= require chart.min.js
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+
