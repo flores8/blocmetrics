@@ -3,6 +3,7 @@ Blocmetrics::Application.routes.draw do
   match 'events' => "events#index", via: :options
 
   root to: "welcome#index"
+  get 'get_started' => 'welcome#get_started', path: 'get-started'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
