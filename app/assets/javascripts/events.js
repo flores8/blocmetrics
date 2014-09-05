@@ -13,8 +13,6 @@ var sendTrackableEvent = function(web_property_id, type){
 	// _bm_request.send(JSON.stringify(_bm_event));
 }
 
-
-
 $(document).ready(function() { 
 	var ctx = $("#myChart").get(0).getContext("2d");
 	var myNewChart = new Chart(ctx);
@@ -34,12 +32,6 @@ $(document).ready(function() {
 	}
 	new Chart(ctx).Line(data);
  });
-
-
-
-
-
-
 
 $(document).ready(function() {
 	var ctx = $("#myBarChart").get(0).getContext("2d");
