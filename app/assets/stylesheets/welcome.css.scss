@@ -216,3 +216,23 @@ a.cd-menu-trigger {
     right: 60px;
   }
 }
+
+/* Get Started Page
+============================================  */
+
+#home-intro {
+  padding-top: 3em;
+  text-align: center;
+  h1 {
+    color: rgb(0,140,201);
+  }
+  h3 {
+    margin: 1em 0 2em;
+    color: #585457;
+  }
+}
+#instructions {
+  a.button {
+    color: white;
+  }
+}
